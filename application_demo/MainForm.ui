@@ -441,7 +441,7 @@ border-style: inset;
            </widget>
           </item>
           <item>
-           <widget class="QPushButton" name="btnMaximize">
+           <widget class="QPushButton" name="btnMinimize">
             <property name="minimumSize">
              <size>
               <width>15</width>
@@ -472,7 +472,7 @@ border-style: inset;
            </widget>
           </item>
           <item>
-           <widget class="QPushButton" name="btnMinimize">
+           <widget class="QPushButton" name="btnMaximize">
             <property name="minimumSize">
              <size>
               <width>15</width>
@@ -910,7 +910,7 @@ border-style: inset;
                     <property name="maximumSize">
                      <size>
                       <width>16777215</width>
-                      <height>60</height>
+                      <height>90</height>
                      </size>
                     </property>
                     <property name="frameShape">
@@ -937,7 +937,7 @@ border-style: inset;
                        <property name="font">
                         <font>
                          <family>SF Pro Text</family>
-                         <pointsize>13</pointsize>
+                         <pointsize>14</pointsize>
                          <weight>50</weight>
                          <italic>false</italic>
                          <bold>false</bold>
@@ -953,7 +953,10 @@ border-style: inset;
                         <bool>true</bool>
                        </property>
                        <property name="plainText">
-                        <string>C:/Users/PC/Desktop/Data/image</string>
+                        <string>Select your image path</string>
+                       </property>
+                       <property name="placeholderText">
+                        <string>Select your image path</string>
                        </property>
                       </widget>
                      </item>

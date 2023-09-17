@@ -355,20 +355,6 @@ class Ui_MainWindow(object):
         self.btnClose.setDefault(False)
         self.btnClose.setObjectName("btnClose")
         self.horizontalLayout.addWidget(self.btnClose)
-        self.btnMaximize = QtWidgets.QPushButton(self.menuBar)
-        self.btnMaximize.setMinimumSize(QtCore.QSize(15, 15))
-        self.btnMaximize.setMaximumSize(QtCore.QSize(15, 15))
-        font = QtGui.QFont()
-        font.setFamily("Montserrat Thin")
-        font.setPointSize(11)
-        font.setBold(False)
-        font.setItalic(False)
-        font.setWeight(50)
-        self.btnMaximize.setFont(font)
-        self.btnMaximize.setStyleSheet("")
-        self.btnMaximize.setText("")
-        self.btnMaximize.setObjectName("btnMaximize")
-        self.horizontalLayout.addWidget(self.btnMaximize)
         self.btnMinimize = QtWidgets.QPushButton(self.menuBar)
         self.btnMinimize.setMinimumSize(QtCore.QSize(15, 15))
         self.btnMinimize.setMaximumSize(QtCore.QSize(15, 15))
@@ -383,6 +369,20 @@ class Ui_MainWindow(object):
         self.btnMinimize.setText("")
         self.btnMinimize.setObjectName("btnMinimize")
         self.horizontalLayout.addWidget(self.btnMinimize)
+        self.btnMaximize = QtWidgets.QPushButton(self.menuBar)
+        self.btnMaximize.setMinimumSize(QtCore.QSize(15, 15))
+        self.btnMaximize.setMaximumSize(QtCore.QSize(15, 15))
+        font = QtGui.QFont()
+        font.setFamily("Montserrat Thin")
+        font.setPointSize(11)
+        font.setBold(False)
+        font.setItalic(False)
+        font.setWeight(50)
+        self.btnMaximize.setFont(font)
+        self.btnMaximize.setStyleSheet("")
+        self.btnMaximize.setText("")
+        self.btnMaximize.setObjectName("btnMaximize")
+        self.horizontalLayout.addWidget(self.btnMaximize)
         spacerItem = QtWidgets.QSpacerItem(320, 35, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
         self.horizontalLayout.addItem(spacerItem)
         self.lblSubtle = QtWidgets.QLabel(self.menuBar)
@@ -514,7 +514,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_11.addWidget(self.lblSelectFolderLabelCheckMissing_2)
         self.frameSelectFolderCheckMissing = QtWidgets.QFrame(self.processFrameCheckModel)
         self.frameSelectFolderCheckMissing.setMinimumSize(QtCore.QSize(0, 60))
-        self.frameSelectFolderCheckMissing.setMaximumSize(QtCore.QSize(16777215, 60))
+        self.frameSelectFolderCheckMissing.setMaximumSize(QtCore.QSize(16777215, 90))
         self.frameSelectFolderCheckMissing.setFrameShape(QtWidgets.QFrame.NoFrame)
         self.frameSelectFolderCheckMissing.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frameSelectFolderCheckMissing.setObjectName("frameSelectFolderCheckMissing")
@@ -524,7 +524,7 @@ class Ui_MainWindow(object):
         self.plainTextImageToInference = QtWidgets.QPlainTextEdit(self.frameSelectFolderCheckMissing)
         font = QtGui.QFont()
         font.setFamily("SF Pro Text")
-        font.setPointSize(13)
+        font.setPointSize(14)
         font.setBold(False)
         font.setItalic(False)
         font.setWeight(50)
@@ -751,7 +751,7 @@ class Ui_MainWindow(object):
         font.setWeight(75)
         self.btnFlag.setFont(font)
         self.btnFlag.setStyleSheet("QPushButton {\n"
-"    background-color:#ed3e3e;\n"
+"    background-color:#910101;\n"
 "    color: rgb(255,255,255)\n"
 "    /*color: rgb(255,255,255);*/\n"
 "}\n"
@@ -761,11 +761,11 @@ class Ui_MainWindow(object):
 "}\n"
 "\n"
 "QPushButton:hover {\n"
-"    background-color:#8f2828;\n"
+"    background-color:#870101;\n"
 "    /* color: rgb(255,255,255); */\n"
 "}\n"
 "QPushButton:pressed {    \n"
-"    background-color:#8f2828;\n"
+"    background-color:#9e0202;\n"
 "}")
         self.btnFlag.setIconSize(QtCore.QSize(30, 16))
         self.btnFlag.setObjectName("btnFlag")
@@ -787,7 +787,8 @@ class Ui_MainWindow(object):
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
         self.lblSubtle.setText(_translate("MainWindow", "DEMO VQA-MODEL - GROUP 4"))
         self.lblSelectFolderLabelCheckMissing_2.setText(_translate("MainWindow", "Select Image"))
-        self.plainTextImageToInference.setPlainText(_translate("MainWindow", "C:/Users/PC/Desktop/Data/image"))
+        self.plainTextImageToInference.setPlainText(_translate("MainWindow", "Select your image path"))
+        self.plainTextImageToInference.setPlaceholderText(_translate("MainWindow", "Select your image path"))
         self.lblSelectFolderLabelCheckMissing.setText(_translate("MainWindow", "Question"))
         self.plainTextQuestion.setPlaceholderText(_translate("MainWindow", "Insert your question"))
         self.btnStartProcessCheckModel.setText(_translate("MainWindow", "Start Inference"))

@@ -152,6 +152,8 @@ class CustomGrip(QWidget):
         elif hasattr(self.wi, 'rightgrip'):
             self.wi.rightgrip.setGeometry(0, 0, 10, self.height() - 20)
 
+
+
 class Widgets(object):
     def top(self, Form):
         if not Form.objectName():
@@ -305,12 +307,12 @@ class MainWindow(QMainWindow):
         # self.uic.checkBox180RotateImage.stateChanged.connect(lambda: stackRotateImageFunction.setStatusQCheckBox(self))
         # self.uic.btnStartProcessRotateImage.clicked.connect(lambda: stackRotateImageFunction.startProcessRotateImage(self))
         # Load model
-        modelViL = ViLTInference()
+        self.modelViL = ViLTInference()
 
         # # Stack check label and picture
         self.uic.btnSelectImageToInference.clicked.connect(lambda: stackDemoModel.getImageInference(self))
         # self.uic.btnSelectFolderLabelCheckMissing.clicked.connect(lambda: stackCheckMissingFunction.getFolderLabelCheckMissing(self))
-        self.uic.btnStartProcessCheckModel.clicked.connect(lambda: stackDemoModel.startProcessInference(self, modelViL))
+        self.uic.btnStartProcessCheckModel.clicked.connect(lambda: stackDemoModel.startProcessInference(self))
         # Screen shot
         self.uic.btnSceenshot.clicked.connect(lambda: UIFunctions.captureScreen(self))
         # # Stack convert picture image
@@ -602,7 +604,7 @@ class UIFunctions(MainWindow):
     # Set Image interface
     def setImageInterface(self):
         imagePath = self.uic.plainTextImageToInference.toPlainText()
-        if imagePath.lower().endswith(('.png', '.jpg','.webp')):
+        if imagePath.lower().endswith(('.png', '.jpg','.webp', '.jpeg')):
             # Đọc hình ảnh từ OpenCV
             openCVImage = cv2.imread(imagePath)
             # Resize hình ảnh với kích thước 510x300 (duy trì tỉ lệ gốc và thêm padding nếu cần)
@@ -682,18 +684,19 @@ class stackDemoModel(MainWindow):
 
     # END Get folder path from butoon
 
-    def startProcessInference(self, model):
+    def startProcessInference(self):
         # Get text
         pathImageInference = self.uic.plainTextImageToInference.toPlainText()
         contentOfQuestion = self.uic.plainTextQuestion.toPlainText()
         
 
         # Check path exist
-        if os.path.exists(pathImageInference) and pathImageInference.lower().endswith(('.png', '.jpg', '.webp')):
+        if os.path.exists(pathImageInference) and pathImageInference.lower().endswith(('.png', '.jpg', '.webp', '.jpeg')):
+
             UIFunctions.setImageInterface(self)
             imageInference = Image.open(pathImageInference)
             imageInference = imageInference.convert("RGB")
-            resultInference = model(imageInference, contentOfQuestion)
+            resultInference = self.modelViL(imageInference, contentOfQuestion)
             # List string result to update to ui
             listResultString = []
             #
