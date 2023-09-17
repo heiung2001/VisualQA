@@ -1,0 +1,1499 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1160</width>
+    <height>720</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>1160</width>
+    <height>720</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>1160</width>
+    <height>720</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="Images.qrc">
+    <normaloff>:/Images/Images/LogoVin2.png</normaloff>:/Images/Images/LogoVin2.png</iconset>
+  </property>
+  <widget class="QWidget" name="styleSheet">
+   <property name="styleSheet">
+    <string notr="true">/* Tooltip */
+QToolTip {
+	color: #333;
+	background-color: #7d6dcf;
+	border: 1px solid #CCC;
+	background-image: none;
+	background-position: left center;
+    background-repeat: no-repeat;
+	border: none;
+	border-left: 2px solid rgb(255, 121, 198);
+	text-align: left;
+	padding-left: 8px;
+	margin: 0px;
+}
+/* END Tooltip */
+
+/* Background*/
+#mainBackground {	
+	background-color: rgb(30,30,30);
+	/*border-image:url(:/Images/Images/background1.jpg);*/
+	opacity: 0.6;
+    /*color: #44475a;*/
+	color: rgb(0,0,0);
+	border-radius: 8px;
+}
+
+#containFrame{
+	border-bottom-left-radius: 8px;
+	border-bottom-right-radius: 8px;
+}
+
+QPlainTextEdit{
+	background-color:#323336;
+	border-radius: 20px;
+	padding-left: 20px;
+	padding-top: 8px;
+	padding-bottom: 8px;
+}
+
+QTextEdit{
+	background-color:#323336;
+	border-radius: 20px;
+	padding-left: 20px;
+	padding-top: 8px;
+	padding-bottom: 8px;
+}
+
+/* END Background*/
+
+/* QMessageBox */
+QMessageBox {
+    background-color: #FFFFFF;
+}
+
+QMessageBox QLabel {
+    color: rgb(0, 0, 0);
+	font: 10pt UTM Avo;
+}
+
+QMessageBox QPushButton{
+	width: 80px;
+	height: 30px;
+    color: rgb(0, 0, 0);
+	font: 10pt UTM Avo;
+	border-radius : 5px;
+	border : 1px solid rgb(107, 107, 107);
+	background-color: rgba(255, 255, 255, 255);
+}
+/* END  QMessageBox */
+
+/* MenuBar */
+#menuBar{
+	background-color: #36383c;
+	border-top-left-radius: 8px;
+	border-top-right-radius: 8px;
+	border-bottom: 1px solid #CCC;
+	
+}
+
+#lblSubtle{
+	font-weight: bold;
+}
+
+
+#btnClose.QPushButton{
+border-image: url(:/Images/Images/closeHold.png);
+}
+
+#btnClose.QPushButton::hover{
+border-image: url(:/Images/Images/closeNormal.png);
+}
+
+#btnClose.QPushButton::pressed{
+border-image: url(:/Images/Images/closePush.png);
+}
+
+
+#btnMaximize.QPushButton{
+border-image: url(:/Images/Images/maxHold.png);
+}
+
+#btnMaximize.QPushButton::hover{
+border-image:url(:/Images/Images/maximizeScreen.png);
+}
+
+
+#btnMaximize.QPushButton::pressed{
+border-image:url(:/Images/Images/maximizsePush.png);
+}
+
+#btnMinimize.QPushButton{
+border-image:url(:/Images/Images/miniHold.png);
+}
+
+#btnMinimize.QPushButton::hover{
+border-image: url(:/Images/Images/miniNormal.png);
+}
+
+
+#btnMinimize.QPushButton::pressed{
+border-image:url(:/Images/Images/miniPush.png);
+}
+
+/* END MenuBar */
+
+
+/*Tool bar*/
+#toolBar .QPushButton {
+    background-position: left center;
+    background-repeat: no-repeat;
+	border: none;
+	border-left: 	1px solid transparent;
+	background-color:transparent;
+	text-align: center;
+	padding-left: 0px;
+	padding-right: 0px;
+	
+}
+#toolBar .QPushButton:hover {
+	border-bottom: 2px solid rgba(0, 170, 255, 150);
+}
+#toolBar .QPushButton:pressed {	
+	border-bottom: 2px solid rgba(0, 170, 255, 250);
+}
+
+#btnSetting.QPushButton{
+border-image: url(:/Images/Images/Setting1.png);
+}
+
+#btnSetting.QPushButton::hover{
+border-image: url(:/Images/Images/Setting2.png) ;
+}
+
+#btnSetting.QPushButton::pressed{
+border-image: url(:/Images/Images/Setting3.png) ;
+}
+
+#line{
+border-left: 1px solid black;
+border-style: inset;
+}
+/*END Tool bar*/
+
+
+/*Stack Widget Rotate Image*/
+#stackedWidget .QPushButton {
+    background-position: left center;
+    background-repeat: no-repeat;
+	background-color:#004b7d;
+	text-align: center;
+	padding-left: 10px;
+	padding-right: 10px;
+	border-radius: 20px;
+	color: rgb(0,0,0);
+	/*color: rgb(255,255,255);*/
+}
+
+#stackedWidget .QPushButton:disabled {
+	background-color: rgb(200,200,200);
+	color: rgb(120, 120, 120);
+}
+
+#stackedWidget .QPushButton:hover {
+	background-color:#025e9c;
+	color: rgb(0,0,0);
+	/* color: rgb(255,255,255); */
+}
+#stackedWidget .QPushButton:pressed {	
+	background-color:#0079c9;
+	color: rgb(0,0,0);
+	/* color: rgb(255,255,255); */
+}
+
+
+
+/*END Stack Widget Rotate Image*/
+
+/* Layout ChooseDirection */
+
+#layOutChooseDirectionRotateImage .QCheckBox {
+    background-position: left center;
+    background-repeat: no-repeat;
+	background-color:rgba(210, 210, 210, 200);
+	text-align: center;
+	border-radius: 20px;
+	color: rgb(0,0,0);
+}
+#layOutChooseDirectionRotateImage .QCheckBox:hover {
+	background-color:rgba(55, 177, 237, 255);
+}
+#layOutChooseDirectionRotateImage .QCheckBox:pressed {	
+	background-color:rgba(0, 170, 255, 255);
+}
+
+#layOutChooseDirectionRotateImage .QCheckBox:checked{
+	background-color:rgba(0, 170, 255, 255);
+}
+
+#layOutChooseDirectionRotateImage .QCheckBox:disabled {
+	background-color: rgb(200,200,200);
+}
+
+#layOutChooseDirectionRotateImage .QCheckBox::indicator{
+	margin-left:5%;
+	margin-right:5%;
+}
+
+#checkBoxAllRotateImage.QCheckBox::indicator:checked {
+	image: url(:/Images/Images/AllOfThemWhite.png);
+}
+#checkBoxAllRotateImage.QCheckBox::indicator:unchecked {
+	image: url(:/Images/Images/AllOfThemBlack.png);
+}
+#checkBoxAllRotateImage.QCheckBox::indicator:hover {
+	image: url(:/Images/Images/AllOfThemWhite.png);
+}
+
+
+#checkBox90RotateImage.QCheckBox::indicator:checked {
+	image: url(:/Images/Images/90White.png);
+	
+}
+#checkBox90RotateImage.QCheckBox::indicator:unchecked {
+	image:url(:/Images/Images/90Black.png);
+}
+
+#checkBox90RotateImage.QCheckBox::indicator:hover {
+	image: url(:/Images/Images/90White.png);
+}
+
+#checkBox180RotateImage.QCheckBox::indicator:checked {
+	image: url(:/Images/Images/180White.png);
+}
+
+#checkBox180RotateImage.QCheckBox::indicator:unchecked {
+	image:url(:/Images/Images/180Black.png);
+}
+#checkBox180RotateImage.QCheckBox::indicator:hover {
+	image: url(:/Images/Images/180White.png);
+}
+
+#checkBox270RotateImage.QCheckBox::indicator:checked {
+	image: url(:/Images/Images/270White.png);
+}
+#checkBox270RotateImage.QCheckBox::indicator:unchecked {
+	image:url(:/Images/Images/270Black.png);
+}
+#checkBox270RotateImage.QCheckBox::indicator:hover {
+	image: url(:/Images/Images/270White.png);
+}
+
+/* END Layout ChooseDirection */
+
+
+/*Convert picture format*/
+
+#progressBarConvertPictureFormat.QProgressBar{
+	border-radius: 20px;
+	color:black;
+}
+
+#progressBarConvertPictureFormat.QProgressBar::chunk{
+	background-color : rgba(0, 170, 255, 255);
+	border-radius :20px;
+}
+
+
+
+
+
+</string>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <property name="leftMargin">
+     <number>0</number>
+    </property>
+    <property name="topMargin">
+     <number>0</number>
+    </property>
+    <property name="rightMargin">
+     <number>0</number>
+    </property>
+    <property name="bottomMargin">
+     <number>0</number>
+    </property>
+    <item>
+     <widget class="QFrame" name="mainBackground">
+      <property name="font">
+       <font>
+        <family>Montserrat Thin</family>
+       </font>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout_2">
+       <property name="spacing">
+        <number>0</number>
+       </property>
+       <property name="leftMargin">
+        <number>0</number>
+       </property>
+       <property name="topMargin">
+        <number>0</number>
+       </property>
+       <property name="rightMargin">
+        <number>0</number>
+       </property>
+       <property name="bottomMargin">
+        <number>0</number>
+       </property>
+       <item>
+        <widget class="QFrame" name="menuBar">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>40</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>40</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <family>Montserrat Thin</family>
+          </font>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::StyledPanel</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout">
+          <property name="spacing">
+           <number>15</number>
+          </property>
+          <property name="leftMargin">
+           <number>20</number>
+          </property>
+          <property name="topMargin">
+           <number>0</number>
+          </property>
+          <property name="rightMargin">
+           <number>20</number>
+          </property>
+          <property name="bottomMargin">
+           <number>0</number>
+          </property>
+          <item>
+           <widget class="QPushButton" name="btnClose">
+            <property name="minimumSize">
+             <size>
+              <width>15</width>
+              <height>15</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>15</width>
+              <height>15</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <family>Montserrat Thin</family>
+              <pointsize>11</pointsize>
+              <weight>50</weight>
+              <italic>false</italic>
+              <bold>false</bold>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true"/>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="default">
+             <bool>false</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="btnMaximize">
+            <property name="minimumSize">
+             <size>
+              <width>15</width>
+              <height>15</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>15</width>
+              <height>15</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <family>Montserrat Thin</family>
+              <pointsize>11</pointsize>
+              <weight>50</weight>
+              <italic>false</italic>
+              <bold>false</bold>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true"/>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="btnMinimize">
+            <property name="minimumSize">
+             <size>
+              <width>15</width>
+              <height>15</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>15</width>
+              <height>15</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <family>Montserrat Thin</family>
+              <pointsize>11</pointsize>
+              <weight>50</weight>
+              <italic>false</italic>
+              <bold>false</bold>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true"/>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer">
+            <property name="font">
+             <font>
+              <family>Montserrat Thin</family>
+             </font>
+            </property>
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>320</width>
+              <height>35</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QLabel" name="lblSubtle">
+            <property name="font">
+             <font>
+              <family>Montserrat Thin</family>
+              <weight>75</weight>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">color: rgba(255, 255, 255, 255);</string>
+            </property>
+            <property name="text">
+             <string>DEMO VQA-MODEL - GROUP 4</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer_2">
+            <property name="font">
+             <font>
+              <family>Montserrat Thin</family>
+             </font>
+            </property>
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>319</width>
+              <height>35</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QLabel" name="label">
+            <property name="minimumSize">
+             <size>
+              <width>80</width>
+              <height>20</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>80</width>
+              <height>20</height>
+             </size>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="pixmap">
+             <pixmap resource="Images.qrc">:/Images/Images/VinBigdataLogo.png</pixmap>
+            </property>
+            <property name="scaledContents">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QFrame" name="containFrame">
+         <property name="font">
+          <font>
+           <family>Montserrat Thin</family>
+          </font>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::StyledPanel</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_3">
+          <property name="spacing">
+           <number>0</number>
+          </property>
+          <property name="leftMargin">
+           <number>0</number>
+          </property>
+          <property name="topMargin">
+           <number>0</number>
+          </property>
+          <property name="rightMargin">
+           <number>0</number>
+          </property>
+          <property name="bottomMargin">
+           <number>0</number>
+          </property>
+          <item>
+           <widget class="QFrame" name="informationFrame">
+            <property name="minimumSize">
+             <size>
+              <width>40</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>40</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <family>Montserrat Thin</family>
+             </font>
+            </property>
+            <property name="layoutDirection">
+             <enum>Qt::LeftToRight</enum>
+            </property>
+            <property name="autoFillBackground">
+             <bool>false</bool>
+            </property>
+            <property name="frameShape">
+             <enum>QFrame::NoFrame</enum>
+            </property>
+            <property name="frameShadow">
+             <enum>QFrame::Raised</enum>
+            </property>
+            <layout class="QVBoxLayout" name="verticalLayout_3">
+             <property name="spacing">
+              <number>40</number>
+             </property>
+             <property name="leftMargin">
+              <number>20</number>
+             </property>
+             <property name="rightMargin">
+              <number>8</number>
+             </property>
+             <property name="bottomMargin">
+              <number>30</number>
+             </property>
+             <item>
+              <spacer name="verticalSpacer">
+               <property name="font">
+                <font>
+                 <family>Montserrat Thin</family>
+                </font>
+               </property>
+               <property name="orientation">
+                <enum>Qt::Vertical</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>20</width>
+                 <height>40</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+             <item>
+              <widget class="QLabel" name="lblFacebook">
+               <property name="minimumSize">
+                <size>
+                 <width>20</width>
+                 <height>20</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>20</width>
+                 <height>20</height>
+                </size>
+               </property>
+               <property name="font">
+                <font>
+                 <family>Montserrat Thin</family>
+                </font>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="pixmap">
+                <pixmap resource="Images.qrc">:/Images/Images/icons8-facebook-f-30.png</pixmap>
+               </property>
+               <property name="scaledContents">
+                <bool>true</bool>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignCenter</set>
+               </property>
+               <property name="margin">
+                <number>0</number>
+               </property>
+               <property name="indent">
+                <number>0</number>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="lblYoutube">
+               <property name="minimumSize">
+                <size>
+                 <width>20</width>
+                 <height>20</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>20</width>
+                 <height>20</height>
+                </size>
+               </property>
+               <property name="font">
+                <font>
+                 <family>Montserrat Thin</family>
+                </font>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="pixmap">
+                <pixmap resource="Images.qrc">:/Images/Images/icons8-youtube-30.png</pixmap>
+               </property>
+               <property name="scaledContents">
+                <bool>true</bool>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignCenter</set>
+               </property>
+               <property name="margin">
+                <number>0</number>
+               </property>
+               <property name="indent">
+                <number>0</number>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="lblWebsite">
+               <property name="minimumSize">
+                <size>
+                 <width>20</width>
+                 <height>20</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>20</width>
+                 <height>20</height>
+                </size>
+               </property>
+               <property name="font">
+                <font>
+                 <family>Montserrat Thin</family>
+                </font>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="pixmap">
+                <pixmap resource="Images.qrc">:/Images/Images/icons8-geography-30.png</pixmap>
+               </property>
+               <property name="scaledContents">
+                <bool>true</bool>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignCenter</set>
+               </property>
+               <property name="margin">
+                <number>0</number>
+               </property>
+               <property name="indent">
+                <number>0</number>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <widget class="QStackedWidget" name="stackedWidget">
+            <property name="font">
+             <font>
+              <family>Montserrat Thin</family>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true"/>
+            </property>
+            <property name="currentIndex">
+             <number>0</number>
+            </property>
+            <widget class="QWidget" name="stackCheckModel">
+             <widget class="QFrame" name="containFrameCheckModel">
+              <property name="geometry">
+               <rect>
+                <x>9</x>
+                <y>0</y>
+                <width>1100</width>
+                <height>661</height>
+               </rect>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>1100</width>
+                <height>0</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>1100</width>
+                <height>16777215</height>
+               </size>
+              </property>
+              <property name="frameShape">
+               <enum>QFrame::NoFrame</enum>
+              </property>
+              <property name="frameShadow">
+               <enum>QFrame::Raised</enum>
+              </property>
+              <layout class="QHBoxLayout" name="horizontalLayout_16">
+               <property name="topMargin">
+                <number>0</number>
+               </property>
+               <property name="rightMargin">
+                <number>40</number>
+               </property>
+               <property name="bottomMargin">
+                <number>0</number>
+               </property>
+               <item>
+                <widget class="QFrame" name="processFrameCheckModel">
+                 <property name="frameShape">
+                  <enum>QFrame::NoFrame</enum>
+                 </property>
+                 <property name="frameShadow">
+                  <enum>QFrame::Raised</enum>
+                 </property>
+                 <layout class="QVBoxLayout" name="verticalLayout_11">
+                  <property name="spacing">
+                   <number>20</number>
+                  </property>
+                  <property name="leftMargin">
+                   <number>30</number>
+                  </property>
+                  <property name="topMargin">
+                   <number>30</number>
+                  </property>
+                  <property name="bottomMargin">
+                   <number>0</number>
+                  </property>
+                  <item>
+                   <widget class="QLabel" name="lblSelectFolderLabelCheckMissing_2">
+                    <property name="minimumSize">
+                     <size>
+                      <width>0</width>
+                      <height>30</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>16777215</width>
+                      <height>30</height>
+                     </size>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <family>Montserrat Thin</family>
+                      <pointsize>24</pointsize>
+                      <weight>75</weight>
+                      <bold>true</bold>
+                     </font>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">color: rgb(255,255,255)</string>
+                    </property>
+                    <property name="text">
+                     <string>Select Image</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QFrame" name="frameSelectFolderCheckMissing">
+                    <property name="minimumSize">
+                     <size>
+                      <width>0</width>
+                      <height>60</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>16777215</width>
+                      <height>60</height>
+                     </size>
+                    </property>
+                    <property name="frameShape">
+                     <enum>QFrame::NoFrame</enum>
+                    </property>
+                    <property name="frameShadow">
+                     <enum>QFrame::Raised</enum>
+                    </property>
+                    <layout class="QHBoxLayout" name="horizontalLayout_18">
+                     <property name="leftMargin">
+                      <number>0</number>
+                     </property>
+                     <property name="topMargin">
+                      <number>4</number>
+                     </property>
+                     <property name="rightMargin">
+                      <number>0</number>
+                     </property>
+                     <property name="bottomMargin">
+                      <number>10</number>
+                     </property>
+                     <item>
+                      <widget class="QPlainTextEdit" name="plainTextImageToInference">
+                       <property name="font">
+                        <font>
+                         <family>SF Pro Text</family>
+                         <pointsize>13</pointsize>
+                         <weight>50</weight>
+                         <italic>false</italic>
+                         <bold>false</bold>
+                        </font>
+                       </property>
+                       <property name="layoutDirection">
+                        <enum>Qt::LeftToRight</enum>
+                       </property>
+                       <property name="styleSheet">
+                        <string notr="true">color: rgb(200,200,200)</string>
+                       </property>
+                       <property name="readOnly">
+                        <bool>true</bool>
+                       </property>
+                       <property name="plainText">
+                        <string>C:/Users/PC/Desktop/Data/image</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QPushButton" name="btnSelectImageToInference">
+                       <property name="minimumSize">
+                        <size>
+                         <width>40</width>
+                         <height>40</height>
+                        </size>
+                       </property>
+                       <property name="maximumSize">
+                        <size>
+                         <width>40</width>
+                         <height>40</height>
+                        </size>
+                       </property>
+                       <property name="styleSheet">
+                        <string notr="true"/>
+                       </property>
+                       <property name="text">
+                        <string/>
+                       </property>
+                       <property name="icon">
+                        <iconset resource="Images.qrc">
+                         <normaloff>:/Images/Images/icons8-opened-folder-50.png</normaloff>:/Images/Images/icons8-opened-folder-50.png</iconset>
+                       </property>
+                      </widget>
+                     </item>
+                    </layout>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QLabel" name="lblSelectFolderLabelCheckMissing">
+                    <property name="minimumSize">
+                     <size>
+                      <width>0</width>
+                      <height>30</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>16777215</width>
+                      <height>30</height>
+                     </size>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <family>Montserrat Thin</family>
+                      <pointsize>24</pointsize>
+                      <weight>75</weight>
+                      <bold>true</bold>
+                     </font>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">color: rgb(255,255,255)</string>
+                    </property>
+                    <property name="text">
+                     <string>Question</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QTextEdit" name="plainTextQuestion">
+                    <property name="font">
+                     <font>
+                      <family>SF Pro Text</family>
+                      <pointsize>15</pointsize>
+                     </font>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">color: rgb(255,255,255)</string>
+                    </property>
+                    <property name="placeholderText">
+                     <string>Insert your question</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QPushButton" name="btnStartProcessCheckModel">
+                    <property name="minimumSize">
+                     <size>
+                      <width>0</width>
+                      <height>40</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>16777215</width>
+                      <height>40</height>
+                     </size>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <family>Montserrat Thin</family>
+                      <pointsize>14</pointsize>
+                      <weight>75</weight>
+                      <bold>true</bold>
+                     </font>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">color: rgb(255,255,255)</string>
+                    </property>
+                    <property name="text">
+                     <string>Start Inference</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+               <item>
+                <layout class="QVBoxLayout" name="resultFrame">
+                 <property name="spacing">
+                  <number>13</number>
+                 </property>
+                 <property name="topMargin">
+                  <number>30</number>
+                 </property>
+                 <item>
+                  <widget class="QLabel" name="lblSelectFolderLabelCheckMissing_4">
+                   <property name="minimumSize">
+                    <size>
+                     <width>0</width>
+                     <height>30</height>
+                    </size>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>16777215</width>
+                     <height>30</height>
+                    </size>
+                   </property>
+                   <property name="font">
+                    <font>
+                     <family>Montserrat Thin</family>
+                     <pointsize>24</pointsize>
+                     <weight>75</weight>
+                     <bold>true</bold>
+                    </font>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">color: rgb(255,255,255)</string>
+                   </property>
+                   <property name="text">
+                    <string>Image</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="lblFigureInference">
+                   <property name="minimumSize">
+                    <size>
+                     <width>510</width>
+                     <height>300</height>
+                    </size>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>510</width>
+                     <height>300</height>
+                    </size>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">border-radius: 13px;</string>
+                   </property>
+                   <property name="text">
+                    <string/>
+                   </property>
+                   <property name="pixmap">
+                    <pixmap resource="Images.qrc">:/Images/Images/BG_Default.png</pixmap>
+                   </property>
+                   <property name="scaledContents">
+                    <bool>true</bool>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="lblSelectFolderLabelCheckMissing_3">
+                   <property name="minimumSize">
+                    <size>
+                     <width>0</width>
+                     <height>30</height>
+                    </size>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>16777215</width>
+                     <height>30</height>
+                    </size>
+                   </property>
+                   <property name="font">
+                    <font>
+                     <family>Montserrat Thin</family>
+                     <pointsize>24</pointsize>
+                     <weight>75</weight>
+                     <bold>true</bold>
+                    </font>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">color: rgb(255,255,255)</string>
+                   </property>
+                   <property name="text">
+                    <string>Answer</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QGroupBox" name="gridGroupBox">
+                   <property name="minimumSize">
+                    <size>
+                     <width>510</width>
+                     <height>0</height>
+                    </size>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>510</width>
+                     <height>16777215</height>
+                    </size>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">background-color: #323336;
+border-radius: 13px;
+</string>
+                   </property>
+                   <layout class="QGridLayout" name="gridResult" columnstretch="1,6">
+                    <item row="1" column="1">
+                     <widget class="QLabel" name="lblAnswerTop2">
+                      <property name="font">
+                       <font>
+                        <family>SF Pro</family>
+                        <pointsize>16</pointsize>
+                       </font>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">color: rgb(255,255,255)</string>
+                      </property>
+                      <property name="text">
+                       <string>The second answer reponse from model</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="1" column="0">
+                     <widget class="QLabel" name="lblTop2">
+                      <property name="font">
+                       <font>
+                        <family>Montserrat Thin</family>
+                        <pointsize>18</pointsize>
+                        <weight>75</weight>
+                        <bold>true</bold>
+                       </font>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">color: rgb(215,215,215)</string>
+                      </property>
+                      <property name="text">
+                       <string>2</string>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignCenter</set>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="0" column="0">
+                     <widget class="QLabel" name="lblTop1">
+                      <property name="font">
+                       <font>
+                        <family>Montserrat Thin</family>
+                        <pointsize>18</pointsize>
+                        <weight>75</weight>
+                        <bold>true</bold>
+                       </font>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">color: rgb(215,215,215);
+border-bottom: solid;</string>
+                      </property>
+                      <property name="text">
+                       <string>1</string>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignCenter</set>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="0" column="1">
+                     <widget class="QLabel" name="lblAnswerTop1">
+                      <property name="font">
+                       <font>
+                        <family>SF Pro</family>
+                        <pointsize>16</pointsize>
+                       </font>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">color: rgb(255,255,255);
+border-bottom: solid;</string>
+                      </property>
+                      <property name="text">
+                       <string>The first answer reponse from model</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="2" column="0">
+                     <widget class="QLabel" name="lblTop3">
+                      <property name="font">
+                       <font>
+                        <family>Montserrat Thin</family>
+                        <pointsize>18</pointsize>
+                        <weight>75</weight>
+                        <bold>true</bold>
+                       </font>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">color: rgb(215,215,215)</string>
+                      </property>
+                      <property name="text">
+                       <string>3</string>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignCenter</set>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="3" column="0">
+                     <widget class="QLabel" name="lblTop4">
+                      <property name="font">
+                       <font>
+                        <family>Montserrat Thin</family>
+                        <pointsize>18</pointsize>
+                        <weight>75</weight>
+                        <bold>true</bold>
+                       </font>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">color: rgb(215,215,215)</string>
+                      </property>
+                      <property name="text">
+                       <string>4</string>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignCenter</set>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="2" column="1">
+                     <widget class="QLabel" name="lblAnswerTop3">
+                      <property name="font">
+                       <font>
+                        <family>SF Pro</family>
+                        <pointsize>16</pointsize>
+                       </font>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">color: rgb(255,255,255)</string>
+                      </property>
+                      <property name="text">
+                       <string>The third answer reponse from model</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="4" column="1">
+                     <widget class="QLabel" name="lblAnswerTop5">
+                      <property name="font">
+                       <font>
+                        <family>SF Pro</family>
+                        <pointsize>16</pointsize>
+                       </font>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">color: rgb(255,255,255)</string>
+                      </property>
+                      <property name="text">
+                       <string>The fifth answer reponse from model</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="3" column="1">
+                     <widget class="QLabel" name="lblAnswerTop4">
+                      <property name="font">
+                       <font>
+                        <family>SF Pro</family>
+                        <pointsize>16</pointsize>
+                       </font>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">color: rgb(255,255,255)</string>
+                      </property>
+                      <property name="text">
+                       <string>The fourth answer reponse from model</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="4" column="0">
+                     <widget class="QLabel" name="lblTop5">
+                      <property name="font">
+                       <font>
+                        <family>Montserrat Thin</family>
+                        <pointsize>18</pointsize>
+                        <weight>75</weight>
+                        <bold>true</bold>
+                       </font>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">color: rgb(215,215,215)</string>
+                      </property>
+                      <property name="text">
+                       <string>5</string>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignCenter</set>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </widget>
+                 </item>
+                 <item>
+                  <layout class="QHBoxLayout" name="horizontalLayout_2">
+                   <item>
+                    <spacer name="horizontalSpacer_3">
+                     <property name="orientation">
+                      <enum>Qt::Horizontal</enum>
+                     </property>
+                     <property name="sizeHint" stdset="0">
+                      <size>
+                       <width>40</width>
+                       <height>15</height>
+                      </size>
+                     </property>
+                    </spacer>
+                   </item>
+                   <item>
+                    <widget class="QPushButton" name="btnSceenshot">
+                     <property name="minimumSize">
+                      <size>
+                       <width>150</width>
+                       <height>40</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>1000</width>
+                       <height>40</height>
+                      </size>
+                     </property>
+                     <property name="font">
+                      <font>
+                       <family>Montserrat Thin</family>
+                       <pointsize>12</pointsize>
+                       <weight>75</weight>
+                       <bold>true</bold>
+                      </font>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">color: rgb(255,255,255)</string>
+                     </property>
+                     <property name="text">
+                      <string>Screenshot</string>
+                     </property>
+                     <property name="iconSize">
+                      <size>
+                       <width>30</width>
+                       <height>16</height>
+                      </size>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QPushButton" name="btnFlag">
+                     <property name="minimumSize">
+                      <size>
+                       <width>80</width>
+                       <height>40</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>16777215</width>
+                       <height>40</height>
+                      </size>
+                     </property>
+                     <property name="font">
+                      <font>
+                       <family>Montserrat Thin</family>
+                       <pointsize>12</pointsize>
+                       <weight>75</weight>
+                       <bold>true</bold>
+                      </font>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">QPushButton {
+	background-color:#910101;
+	color: rgb(255,255,255)
+	/*color: rgb(255,255,255);*/
+}
+
+QPushButton:disabled {
+	background-color: rgb(200,200,200);
+}
+
+QPushButton:hover {
+	background-color:#870101;
+	/* color: rgb(255,255,255); */
+}
+QPushButton:pressed {	
+	background-color:#9e0202;
+}</string>
+                     </property>
+                     <property name="text">
+                      <string>Flags</string>
+                     </property>
+                     <property name="iconSize">
+                      <size>
+                       <width>30</width>
+                       <height>16</height>
+                      </size>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </item>
+                </layout>
+               </item>
+              </layout>
+             </widget>
+            </widget>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources>
+  <include location="Images.qrc"/>
+ </resources>
+ <connections/>
+</ui>

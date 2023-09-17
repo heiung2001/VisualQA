@@ -1,0 +1,69 @@
+<RCC>
+  <qresource prefix="Images">
+    <file>Images/NotFound.png</file>
+    <file>Images/BG_Default.png</file>
+    <file>Images/LogoVin2.png</file>
+    <file>Images/VinBigdataLogo.png</file>
+    <file>Images/Error.png</file>
+    <file>Images/Info.png</file>
+    <file>Images/NotAllow.png</file>
+    <file>Images/Question.png</file>
+    <file>Images/Success.png</file>
+    <file>Images/Warning.png</file>
+    <file>Images/CoppyRight.png</file>
+    <file>Images/AllOfThemBlack.png</file>
+    <file>Images/AllOfThemWhite.png</file>
+    <file>Images/icons8-opened-folder-50.png</file>
+    <file>Images/Asset 1.png</file>
+    <file>Images/Asset 2.png</file>
+    <file>Images/Asset 3.png</file>
+    <file>Images/Asset 4.png</file>
+    <file>Images/90Black.png</file>
+    <file>Images/90White.png</file>
+    <file>Images/180Black.png</file>
+    <file>Images/180White.png</file>
+    <file>Images/270Black.png</file>
+    <file>Images/270White.png</file>
+    <file>Images/Asset 5.png</file>
+    <file>Images/Asset 6.png</file>
+    <file>Images/Asset 2.png</file>
+    <file>Images/soft-vintage-gradient-blur-background-with-pastel-colored-well-use-as-studio-room-product-presentation-banner.jpg</file>
+    <file>Images/icons8-geography-30.png</file>
+    <file>Images/background1.jpg</file>
+    <file>Images/icons8-youtube-30.png</file>
+    <file>Images/icons8-facebook-f-30.png</file>
+    <file>Images/icon.ico</file>
+    <file>Images/icons8-labels-30.png</file>
+    <file>Images/Setting1.png</file>
+    <file>Images/Setting2.png</file>
+    <file>Images/Setting3.png</file>
+    <file>Images/Setting1.png</file>
+    <file>Images/Setting2.png</file>
+    <file>Images/Setting3.png</file>
+    <file>Images/Close3.png</file>
+    <file>Images/Close2.png</file>
+    <file>Images/Close.png</file>
+    <file>Images/Hide.png</file>
+    <file>Images/LogOut.png</file>
+    <file>Images/LogOut2.png</file>
+    <file>Images/Mail.png</file>
+    <file>Images/Check.png</file>
+    <file>Images/convertClass.png</file>
+    <file>Images/EditPicture.png</file>
+    <file>Images/More.png</file>
+    <file>Images/photoAdjust.png</file>
+    <file>Images/Rotate.png</file>
+    <file>Images/information.png</file>
+    <file>Images/closeHold.png</file>
+    <file>Images/closeNormal.png</file>
+    <file>Images/closePush.png</file>
+    <file>Images/maxHold.png</file>
+    <file>Images/maximizeScreen.png</file>
+    <file>Images/maximizsePush.png</file>
+    <file>Images/miniHold.png</file>
+    <file>Images/miniNormal.png</file>
+    <file>Images/miniPush.png</file>
+    <file>Images/normalScreen.png</file>
+    <file>Images/normalScreenPush.png</file>
+  </qresource>
+</RCC>

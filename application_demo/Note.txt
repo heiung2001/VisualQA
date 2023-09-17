@@ -1,0 +1,60 @@
+pyuic5 Home.ui -o Home.py
+pyuic5 MainForm.ui -o MainForm.py
+pyuic5 HistoryWindow.ui -o HistoryWindow.py
+pyuic5 HistoryForm.ui -o HistoryForm.py
+pyuic5 LoginForm.ui -o LoginForm.py
+pyuic5 ChangePasswordForm.ui -o ChangePasswordForm.py
+pyuic5 ProcessForm.ui -o ProcessForm.py
+pyuic5 Sign1.ui -o Sign1.py
+pyrcc5 picture.qrc -o picture_rc.py
+pyrcc5 Images.qrc -o Images_rc.py
+Images.qrc
+pyuic5 Stacked.ui -o Stacked.py
+
+sudo -H pip3 install pyinstaller
+pip install pyinstaller
+pyinstaller-w -y Program.py
+sudo pyinstaller --onefile -w -y Program.py --hidden-import=PyQt5.sip
+
+pyinstaller  -w -y --add-binary ‘/usr/lib/aarch64-linux-gnu/gstreamer-1.0/deepstream/*.so:.’ --add-data /opt/nvidia/deepstream/deepstream-5.0/sources/deepstream_python_apps/apps/common:common deepstream_test_2.py
+
+sudo pyinstaller  -w -y --add-binary '/usr/lib/aarch64-linux-gnu/gstreamer-1.0/deepstream/*.so:.' --add-data /home/kova03/Deployment/02_Libs:02_Libs --add-data /home/kova03/Deployment/04_Database:04_Database --add-data /home/kova03/Deployment/05_Model:05_Model --add-data /home/kova03/Deployment/dstest1_pgie_config.txt:. Program.py --hidden-import=PyQt5.sip
+
+
+sudo pyinstaller  -w -y --add-binary '/usr/lib/aarch64-linux-gnu/gstreamer-1.0/deepstream/*.so:.' --add-data 02_Libs:02_Libs --add-data 01_Images:01_Images --add-data 04_Database:04_Database --add-data 05_Model:05_Model --add-data dstest1_pgie_config.txt:. Program.py --hidden-import=PyQt5.sip
+
+sudo chmod -R 777 dist
+
+--add-data /home/kova03/Deployment/common:common 
+
+
+libnvdsgst_inferserver.so
+libnvdsgst_udp.so
+/home/kova03/Deployment/dstest1_pgie_config.txt
+
+================================================================
+pyuic5 splash_screen.ui -o ui_splash_screen.py
+pyuic5 main.ui -o ui_main.py 
+pyuic5 SplashForm.ui -o SplashForm.py
+pyuic5 SplashForm.ui -o ui_splash_screen.py
+================================================================
+
+from PyQt5.QtWidgets import QApplication, QMainWindow
+import sys
+from Stacked import Ui_MainWindow
+
+
+class MainWindow:
+    def __init__(self):
+        self.main_win = QMainWindow()
+        self.uic = Ui_MainWindow()
+        self.uic.setupUi(self.main_win)
+
+    def show(self):
+        self.main_win.show()
+
+if __name__ == "__main__":
+    app = QApplication(sys.argv)
+    main_win = MainWindow()
+    main_win.show()
+    sys.exit(app.exec())
