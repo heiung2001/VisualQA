@@ -9,12 +9,18 @@ from PyQt5 import QtCore, QtGui
 from PyQt5.QtGui import * 
 from PyQt5.QtCore import * 
 #rom BlurWindow.blurWindow import blur, GlobalBlur
+
+import torch
+from transformers import ViltProcessor, ViltForQuestionAnswering
+
 import os
 import cv2
 import time
 from PIL import Image
 from datetime import datetime
 import numpy as np
+
+
 # For icon
 
 # Class Setting
@@ -299,12 +305,12 @@ class MainWindow(QMainWindow):
         # self.uic.checkBox180RotateImage.stateChanged.connect(lambda: stackRotateImageFunction.setStatusQCheckBox(self))
         # self.uic.btnStartProcessRotateImage.clicked.connect(lambda: stackRotateImageFunction.startProcessRotateImage(self))
         # Load model
-        model = ViLModel()
+        modelViL = ViLTInference()
 
         # # Stack check label and picture
         self.uic.btnSelectImageToInference.clicked.connect(lambda: stackDemoModel.getImageInference(self))
         # self.uic.btnSelectFolderLabelCheckMissing.clicked.connect(lambda: stackCheckMissingFunction.getFolderLabelCheckMissing(self))
-        self.uic.btnStartProcessCheckModel.clicked.connect(lambda: stackDemoModel.startProcessInference(self, model))
+        self.uic.btnStartProcessCheckModel.clicked.connect(lambda: stackDemoModel.startProcessInference(self, modelViL))
         # Screen shot
         self.uic.btnSceenshot.clicked.connect(lambda: UIFunctions.captureScreen(self))
         # # Stack convert picture image
@@ -596,7 +602,7 @@ class UIFunctions(MainWindow):
     # Set Image interface
     def setImageInterface(self):
         imagePath = self.uic.plainTextImageToInference.toPlainText()
-        if imagePath.lower().endswith(('.png', '.jpg')):
+        if imagePath.lower().endswith(('.png', '.jpg','.webp')):
             # Đọc hình ảnh từ OpenCV
             openCVImage = cv2.imread(imagePath)
             # Resize hình ảnh với kích thước 510x300 (duy trì tỉ lệ gốc và thêm padding nếu cần)
@@ -681,32 +687,69 @@ class stackDemoModel(MainWindow):
         pathImageInference = self.uic.plainTextImageToInference.toPlainText()
         contentOfQuestion = self.uic.plainTextQuestion.toPlainText()
         
+
         # Check path exist
-        if not os.path.exists(pathImageInference):
-            replyMessBoxInfor =  self.createMessage("Warning","Please check your directory",QMessageBox.Ok, ":/Images/Images/Error.png")
-        else:
+        if os.path.exists(pathImageInference) and pathImageInference.lower().endswith(('.png', '.jpg', '.webp')):
             UIFunctions.setImageInterface(self)
-            model.inferenceViL(pathImageInference, contentOfQuestion)
-            
+            imageInference = Image.open(pathImageInference)
+            imageInference = imageInference.convert("RGB")
+            resultInference = model(imageInference, contentOfQuestion)
+            # List string result to update to ui
+            listResultString = []
+            #
+            for anwser, prob in resultInference.items():
+                resultElement = f'{round(prob*100)} % - {anwser}'
+                # resultElement = f'{anwser}'
+                listResultString.append(resultElement)
+            # Show to ui
+            self.uic.lblAnswerTop1.setText(listResultString[0])
+            self.uic.lblAnswerTop2.setText(listResultString[1])
+            self.uic.lblAnswerTop3.setText(listResultString[2])
+            self.uic.lblAnswerTop4.setText(listResultString[3])
+            self.uic.lblAnswerTop5.setText(listResultString[4])
+
             replyMessBoxInfor =  self.createMessage("Complete inference!","Complete",QMessageBox.Ok, ":/Images/Images/Success.png")
             # if replyMessBoxInfor.returnResultClick() == QMessageBox.Yes:
             #     replyMessBoxInfor.close()
                 # Set status is enable
+            
+        else:
+            replyMessBoxInfor =  self.createMessage("Warning","Please check your directory",QMessageBox.Ok, ":/Images/Images/Error.png")
+            
         # UIFunctions.setButtonIsEnable(self)
         # self.uic.frameProcessBar.hide()
         # stackRotateImageFunction.setValue(self, 30, self.uic.labelPercentageRotateImage, self.uic.circularProgressRotateImage, "rgba(85, 170, 255, 255)")
         # Set image interface
 
-
-
-class ViLModel:
-    def __init__(self):
-        print('LoadModel')
-    def inferenceViL(self, imagePath, contentQuestion):
-        print('imagePath: ', imagePath)
-        print('Content: ', contentQuestion)
-
 # END Class stack Rotate Image Function
+
+
+# Class ViLModel
+class ViLTInference:
+    def __init__(self):
+        weight = "dandelin/vilt-b32-finetuned-vqa"
+        print("Loading: {}".format(weight))
+
+        self.processor = ViltProcessor.from_pretrained(weight)
+        self.model = ViltForQuestionAnswering.from_pretrained(weight)
+
+    def __call__(self, image, text):
+        print('Start Inference')
+        encoding = self.processor(image, text, return_tensors='pt')
+
+        outputs = self.model(**encoding)
+        logits = outputs.logits
+        predicted_classes = torch.sigmoid(logits)
+
+        answer_dict = dict()
+        probs, classes = torch.topk(predicted_classes, 5)
+        for prob, classes_idx in zip(probs.squeeze().tolist(), classes.squeeze().tolist()):
+            answer_dict[self.model.config.id2label[classes_idx]] = prob
+
+        return answer_dict
+# END Class ViLModel
+
+
 
 
 if __name__ == "__main__":
