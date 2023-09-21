@@ -3,8 +3,9 @@ import numpy as np
 import torch
 import torch.utils.data as data
 import torchvision.transforms as transforms
+
 from PIL import Image
-import utils as text_helper
+from utils import text_helper
 
 
 class VqaDataset(data.Dataset):
