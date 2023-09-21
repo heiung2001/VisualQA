@@ -10,6 +10,7 @@ from model import VqaModel
 
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+print(device)
 
 
 def main(args):
@@ -19,8 +20,8 @@ def main(args):
 
     data_loader = get_loader(
         input_dir=args.input_dir,
-        input_vqa_train='vqa_input/train.npy',
-        input_vqa_valid='vqa_input/valid.npy',
+        input_vqa_train='train.npy',
+        input_vqa_valid='valid.npy',
         max_qst_length=args.max_qst_length,
         max_num_ans=args.max_num_ans,
         batch_size=args.batch_size,
@@ -58,7 +59,6 @@ def main(args):
             batch_step_size = len(data_loader[phase].dataset) / args.batch_size
 
             if phase == 'train':
-                scheduler.step()
                 model.train()
             else:
                 model.eval()
@@ -95,6 +95,8 @@ def main(args):
                 if batch_idx % 100 == 0:
                     print('| {} SET | Epoch [{:02d}/{:02d}], Step [{:04d}/{:04d}], Loss: {:.4f}'
                           .format(phase.upper(), epoch+1, args.num_epochs, batch_idx, int(batch_step_size), loss.item()))
+            
+            scheduler.step()
 
             # Print the average loss and accuracy in an epoch.
             epoch_loss = running_loss / batch_step_size
