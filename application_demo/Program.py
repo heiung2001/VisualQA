@@ -681,6 +681,8 @@ class stackDemoModel(MainWindow):
     def getImageInference(self):
         pathImageInference = getLinkFromButton()
         self.uic.plainTextImageToInference.setPlainText(pathImageInference)
+        UIFunctions.setImageInterface(self)
+
 
     # END Get folder path from butoon
 
@@ -688,6 +690,7 @@ class stackDemoModel(MainWindow):
         # Get text
         pathImageInference = self.uic.plainTextImageToInference.toPlainText()
         contentOfQuestion = self.uic.plainTextQuestion.toPlainText()
+        
         
 
         # Check path exist
